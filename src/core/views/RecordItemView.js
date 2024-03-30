@@ -67,6 +67,9 @@ const RecordItemView = Marionette.ItemView.extend(/** @lends core/views/layers.R
 
   enqueueImageFetch(url) {
     if (window.LimitedRequestQueue) {
+      if (!url) {
+        return;
+      } 
       const urlObj = new URL(url);
       if (window.EventBusLimitedRequestQueue.cache[urlObj.href]) {
         // take thumbnail from cache and set to image element src
