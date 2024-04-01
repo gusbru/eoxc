@@ -27,6 +27,7 @@ const RecordItemView = Marionette.ItemView.extend(/** @lends core/views/layers.R
   },
 
   templateHelpers() {
+    console.log(this.model)
     const time = this.model.get('properties').time;
     const start = Array.isArray(time) ? time[0] : time;
     return {
